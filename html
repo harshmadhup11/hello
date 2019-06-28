@@ -1,0 +1,126 @@
+agenda
+HTML-v5
+css-v3
+python
+interface-web-desktopserver
+<DVWA-HACKING APP>
+  yum install httpd -y
+  systemctl status httpd
+  systemctl start httpd
+  systemctl enable httpd
+cd /var/www/html
+ls
+pwd
+vi index.html
+---->
+<html>
+<head>
+<title>adhoc</title>
+</head>
+<body>    <!-- NOTE: will be created on the remaing page -->
+
+<h1><!-- NOTE: for heading in the page -->hello world  </h1>
+hii <b><!-- NOTE: to bold a letter --> HTML </b>
+<p><!-- NOTE: create a new paragraph -->how are you </p>
+<marquee><!-- NOTE: move the letter like a train -->send email </marquee>
+<img  src="a.jpg">
+</body>
+</html>
+http://52.205.128.161/a.jpg <!-- NOTE: write in src image -->
+
+cp index.html page2.html
+vi page2.html
+--->
+<html>
+<head>
+hi
+</head>
+<body>
+  <h2> this is page 2</h2>
+  <iframe src="index.html" hight="300" width="700">  </iframe> <!-- NOTE: create a frame in the page -->
+  <iframe src="wind.mp4"
+  http://52.205.128.161/wind.mp4
+  < href="https://www.google.com">click here </a>  <br/><!-- NOTE: starts a new line -->
+  <a href="index.html"> touch here </a> <br/> <!-- NOTE:href- create a touch link -->
+  <meta http-equiv="refresh" content="3;url=https://www.google.com " /> <!-- NOTE: after3 secd the page will take to the google -->
+  </body>
+</html>
+<!-- NOTE: <!--body--> use to coment -->
+
+
+
+##user input##
+cp page2.html command.html
+vi command.html
+--->
+  <head>
+    <title>user input</title>
+
+  </head>
+  <body>
+  <h1>  hello </h1>
+<form>
+enter your name  <input name="x"> <!-- NOTE: create a boxfor input from user -->
+enter your password <input type="password" name="y">
+                    or
+ <input name="x" placeholder="enter your name">
+<input type="submit">
+<input type="radio" name="python"> value="python" <br/><!-- NOTE: create a mcq type  -->
+<input type="radio" name="go" value="go">
+<input type="checkbox" name="a">ml </br>
+
+
+<textarea name="s" cols="50"  rows="15" >
+
+</textarea>
+<input type="submit">
+
+</form>
+
+  </body>
+</html>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+user input
+    </title>
+  </head>
+  <body>
+<<h1>hello </h1>
+<form>``
+  <input type="text" name="" value="x" placeholder="enter you command">
+  <input type="submit"  value="run">
+  </form>
+  </body>
+</html>
+
+CGI-common gateway interface
+cd /var/www/
+ls
+cd cgi-bin/
+ls
+vi cmd.CGI
+--->
+#!/usr/bin/pyhton3
+import cgi
+import cgitb
+# to show common error in webbrowser
+cgitb.enable()
+print("content-type:text/html")
+print("")
+cgi.fieldstorage() #this will collect al the htmlcode with data
+#now extracting vaue if x
+data=webdata.getvalue('x')
+#sending output of client via web server
+output=subprocess.getoutput(data)
+print("<pre>")
+print("h1")
+print(output)
+print("</h1>")
+print("</pre>")
+
+tailf /var/log/httpd/error_log <!-- NOTE: shows all the error  -->
+a2enmod cgi <!-- NOTE: goes to apache server to start cgi -->
+-nlpt--
