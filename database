@@ -1,0 +1,33 @@
+DB
+-->SQL
+-yum install httpd -y
+--cd /var/www/html
+--ls
+--yum install mysql
+--mysql -u root -h (copy endpoint from aws and addinbound port mysql)
+--show databases;
+--create database hello;
+--use adhoc
+--show tables
+go to redashu>repository>search dbconnect>myfile>raw>copy link
+--wget url paste
+mysql -u root -h (url aws) adhoc <myfile.sql
+vi dbconnect
+
+import mysql.connector as mysql
+#RDS info
+u='root'
+p='harsh123
+db='adhoc'
+h='mysqldbserver.cswddph6uqhb.ap-south-1.rds.amazonaws.com'
+
+#now connecting
+conn=mysql.connect(user=u,password=p,database=db,host=h)
+# now genrating asql lang cursor
+cur=conn.cursor()
+#now we can write sql query
+cur.execute("show tables;")
+#now print result
+print(cur.fetchall())
+#closing conn
+conn.close()
